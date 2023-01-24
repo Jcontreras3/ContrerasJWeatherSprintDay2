@@ -1,0 +1,51 @@
+.contClass{
+    width:100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.navColor{
+    background-color: #8898C2;
+}
+
+.titleTxt{
+    color: white;
+    margin-left: 10rem;
+}
+
+.searchBar{
+    margin-left: 40rem;
+}
+
+.btnColor{
+    background-color: #F9F5F5;
+}
+
+.bookBtn{
+    background: url('https://api.iconify.design/material-symbols/bookmark-outline.svg?color=white') no-repeat center center / contain;
+    outline: none;
+}
+
+.weatherCol1Styles{
+    background-color: #DCB692;
+}
+
+.morningCol{
+    
+}
+.noonCol{
+
+}
+.eveningCol{
+
+}
+
+.searchStyle{
+    width: 15rem;
+}
+
+.pTxtStyles1{
+    font-size: 30px;
+    color: white;
+}
