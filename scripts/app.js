@@ -8,7 +8,7 @@ function WeatherColElements(){
     cityText.textContent = "Modesto, CA";
     cityText.className = "pTxtStyles1"
     let currentWTxt = document.createElement('p')
-    currentWTxt.textContent = "CurrentWeather";
+    currentWTxt.textContent = "CurrentWeathers";
     currentWTxt.className = "pTxtStyles1";
 
 
