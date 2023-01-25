@@ -1,51 +1,93 @@
-.contClass{
-    width:100%;
-    min-height: 100vh;
-    overflow: hidden;
-
+.contClass {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.navColor{
+.navColor {
+  background-color: #8898c2;
+}
+
+.titleTxt {
+  color: white;
+  margin-left: 10rem;
+}
+
+.searchBar {
+  margin-left: 60rem;
+}
+
+.btnColor {
+  background-color: #f9f5f5;
+}
+
+.bookBtn {
+  background: url("https://api.iconify.design/material-symbols/bookmark-outline.svg?color=white")
+    no-repeat center center / contain;
+  outline: none;
+}
+
+.weatherCol1Styles {
+  background-color: #dcb692;
+}
+
+.morningCol {
     background-color: #8898C2;
+    width: 35rem;
 }
-
-.titleTxt{
-    color: white;
-    margin-left: 10rem;
+.noonCol {
+    background-color: #8898C2;
+    width: 35rem;
+   margin-left: 6rem;
+   
 }
-
-.searchBar{
-    margin-left: 40rem;
-}
-
-.btnColor{
-    background-color: #F9F5F5;
-}
-
-.bookBtn{
-    background: url('https://api.iconify.design/material-symbols/bookmark-outline.svg?color=white') no-repeat center center / contain;
-    outline: none;
-}
-
-.weatherCol1Styles{
-    background-color: #DCB692;
-}
-
-.morningCol{
+.eveningCol {
+    background-color: #8898C2;
+    width: 35rem;
+    margin-left: 6rem;
     
 }
-.noonCol{
 
-}
-.eveningCol{
-
+.searchStyle {
+  width: 15rem;
 }
 
-.searchStyle{
-    width: 15rem;
+.pTxtStyles1 {
+  font-size: 30px;
+  color: white;
+}
+.pTxtStyles2 {
+  font-size: 15px;
+  color: white;
+}
+.pTxtStyles3 {
+  position: absolute;
+  width: 290px;
+  height: 213px;
+  left: 874px;
+  font-size: 140px;
+  color: white;
+}
+.pTxtStyles4 {
+  float: left;
+  font-size: 140px;
+  color: white;
 }
 
-.pTxtStyles1{
-    font-size: 30px;
-    color: white;
+.sunIcon {
+  float: right;
+  color: white;
+  margin-right: 5rem;
+}
+
+.starBtn {
+    background: url('https://api.iconify.design/material-symbols/star-rate.svg?color=white&width=100&height=100') no-repeat center center / contain;
+    outline: none;
+  
+}
+
+.PurpleBxRow{
+    justify-content: center;
+    display: flex;
+    margin-top: 3rem;
 }
