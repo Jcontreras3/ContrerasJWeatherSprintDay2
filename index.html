@@ -33,7 +33,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex searchBar" role="search">
+          <div class="d-flex searchBar">
             <button
               class="btn btn bookBtn"
               type="button"
@@ -46,9 +46,10 @@
               type="search"
               placeholder="Search"
               aria-label="Search"
+              id="searchBarI"
             />
-            <button class="btn btn-light btnColor" type="submit">Search</button>
-          </form>
+            <button id="searchSubBtn"  class="btn btn-light btnColor" type="submit">Search</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -110,48 +111,35 @@
             id="btn-check"
             autocomplete="off"
           />
-          <label class="btn btn-warning starBtn" for="btn-check"
-            ></label
-          >
+          <label class="btn btn-warning starBtn" for="btn-check"></label>
         </div>
       </div>
 
-      <div class="row PurpleBxRow">
-        <div class="morningCol">
-          <p class="pTxtStyles2">Morning</p>
-          <p class="pTxtStyles4">55</p>
-          <iconify-icon
-            class="sunIcon"
-            icon="ph:sun-thin"
-            width="100"
-            height="100"
-          ></iconify-icon>
+      <div class="row fivePrpRow">
+        <div class="fivePrpBx">
+          <p class="prpTxt">Monday</p>
+          <p id="day1" class="prpNum">55</p>
+          <iconify-icon class="fiveIconClss" icon="ph:sun-thin" width="70" height="70"></iconify-icon>
         </div>
-        <div class="noonCol">
-          <p class="pTxtStyles2">Noon</p>
-          <p class="pTxtStyles4">55</p>
-          <iconify-icon
-          class="sunIcon"
-          icon="ph:sun-thin"
-          width="100"
-          height="100"
-        ></iconify-icon>
+        <div class="fivePrpBx">
+          <p class="prpTxt">Tuesday</p>
+          <p id="day2" class="prpNum">55</p>
+          <iconify-icon class="fiveIconClss" icon="ph:sun-thin" width="70" height="70"></iconify-icon>
         </div>
-        <div class="eveningCol">
-          <p class="pTxtStyles2">Evening</p>
-          <p class="pTxtStyles4">55</p>
-          <iconify-icon
-          class="sunIcon"
-          icon="ph:sun-thin"
-          width="100"
-          height="100"
-        ></iconify-icon>
+        <div class="fivePrpBx">
+          <p class="prpTxt">Wednesday</p>
+          <p id="day3" class="prpNum">55</p>
+          <iconify-icon class="fiveIconClss" icon="ph:sun-thin" width="70" height="70"></iconify-icon>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          
+        <div class="fivePrpBx">
+          <p class="prpTxt">Thursday</p>
+          <p id="day4" class="prpNum">55</p>
+          <iconify-icon class="fiveIconClss" icon="ph:sun-thin" width="70" height="70"></iconify-icon>
+        </div>
+        <div class="fivePrpBx2">
+          <p class="prpTxt">Friday</p>
+          <p id="day5" class="prpNum">55</p>
+          <iconify-icon class="fiveIconClss" icon="ph:sun-thin" width="70" height="70"></iconify-icon>
         </div>
       </div>
     </div>

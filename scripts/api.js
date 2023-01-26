@@ -1,14 +1,17 @@
+import { WeatherColElements, ForecastElements } from "./app.js"
 
-
-function WeatherURL(){
-    fetch("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=8583ce53372dd01d973d6770d5ebcad9&units=imperial")
+function WeatherURL(city){
+    fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=8583ce53372dd01d973d6770d5ebcad9&units=imperial")
     .then(response => response.json()
-    ).then(data => console.log(data))
+    ).then(data => {let weatherData = data
+    WeatherColElements(weatherData)})
 }
-function ForeCastURL(){
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=8583ce53372dd01d973d6770d5ebcad9&units=imperial")
+function ForeCastURL(city){
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=8583ce53372dd01d973d6770d5ebcad9&units=imperial")
     .then(response => response.json()
-    ).then(data => console.log(data))
+    ).then(data => {let forecastData = data 
+        ForecastElements(forecastData)})
+        
 }
 
 export {WeatherURL, ForeCastURL}
