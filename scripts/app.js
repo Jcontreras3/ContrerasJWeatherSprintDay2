@@ -67,5 +67,17 @@ function ForecastElements(forecastData){
 
 
 
+function FavoritedSavedItems(){
+    let fav = GettingLocalStorage();
+
+    fav.map((name) => {
+        let storageBtn = document.createElement('button')
+        storageBtn.className = 'list-group-item list-group-item-action';
+        storageBtn.textContent = 'placehoder'
+    })
+}
+
+
+
 
 export {WeatherColElements, ForecastElements}
