@@ -8,12 +8,12 @@ function saveToLocalStorage(cityName){
 
 
 function GettingLocalStorage(){
-    let localStoragData = localStorage.getItem('Fav');
-    if(localStoragData == null){
+    let localStorageData = localStorage.getItem('Fav');
+    if(localStorageData == null){
         return [];
     }
 
-    return JSON.parse(localStoragData);
+    return JSON.parse(localStorageData);
 }
 
 function RemoveLocalItems(cityName){

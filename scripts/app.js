@@ -7,6 +7,8 @@ let weatherCol3 = document.getElementById('weatherCol3');
 let weatherCol4 = document.getElementById('weatherCol4');
 let searchBarI = document.getElementById('searchBarI');
 let searchSubBtn = document.getElementById('searchSubBtn');
+let injectHereCanvas = document.getElementById('injectHereCanvas');
+let favorBtn = document.getElementById('favorBtn');
 let cityText;
 let currentWTxt;
 let timeTxt1;
@@ -17,13 +19,11 @@ let day2 = document.getElementById('day2');
 let day3 = document.getElementById('day3');
 let day4 = document.getElementById('day4');
 let day5 = document.getElementById('day5');
-
-
 ForeCastURL();
 searchSubBtn.addEventListener('click', function(){
     WeatherURL(searchBarI.value);
     ForeCastURL(searchBarI.value);
-
+    
     weatherCol1.removeChild(cityText)
     weatherCol2.removeChild(currentWTxt);
     weatherCol2.removeChild(timeTxt1);
@@ -33,6 +33,12 @@ searchSubBtn.addEventListener('click', function(){
 searchBarI.addEventListener('keypress', function(event){
     if(event.key == "Enter"){searchSubBtn.click();}
 })
+
+// favorBtn.addEventListener('click', function(){
+//     let localStorageData = GettingLocalStorage();
+//     console.log(localStorageData);
+//     FavoritedSavedItems();
+// })
 
 
 
@@ -44,10 +50,10 @@ function WeatherColElements(weatherData){
     currentWTxt.textContent = "CurrentWeather";
     currentWTxt.className = "pTxtStyles1";
      timeTxt1 = document.createElement('p')
-    timeTxt1.textContent = weatherData.dt;
+    timeTxt1.textContent = weatherData.time;
     timeTxt1.className = "pTxtStyles2";
      degreeLgTxt = document.createElement('p')
-    degreeLgTxt.textContent = weatherData.main.temp;
+    degreeLgTxt.textContent = weatherData.main.temp + "°F";
     degreeLgTxt.className = "pTxtStyles3";
 
 
@@ -58,23 +64,25 @@ function WeatherColElements(weatherData){
 }
 
 function ForecastElements(forecastData){
-    day1.textContent = forecastData.list[0].main.temp;
-    day2.textContent = forecastData.list[2].main.temp;
-    day3.textContent = forecastData.list[3].main.temp;
-    day4.textContent = forecastData.list[4].main.temp;
-    day5.textContent = forecastData.list[5].main.temp;
+    day1.textContent = forecastData.list[0].main.temp + "°F";
+    day2.textContent = forecastData.list[2].main.temp + "°F";
+    day3.textContent = forecastData.list[3].main.temp + "°F";
+    day4.textContent = forecastData.list[4].main.temp + "°F";
+    day5.textContent = forecastData.list[5].main.temp + "°F";
 }
+
 
 
 
 function FavoritedSavedItems(){
     let fav = GettingLocalStorage();
 
-    fav.map((name) => {
-        let storageBtn = document.createElement('button')
+    fav.map((nameCity) => {
+       let storageBtn = document.createElement('button')
         storageBtn.className = 'list-group-item list-group-item-action';
         storageBtn.textContent = 'placehoder'
     })
+
 }
 
 
