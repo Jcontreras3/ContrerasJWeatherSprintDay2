@@ -1,6 +1,10 @@
-import { WeatherURL, ForeCastURL } from "./api.js";
-import { GetLocation } from "./geoLocation.js";
-import { saveToLocalStorage, GettingLocalStorage, RemoveLocalItems } from "./localStorage.js";
+import { WeatherURL, ForeCastURL } from './api.js';
+import { GetLocation } from './geoLocation.js';
+import {
+  saveToLocalStorage,
+  GettingLocalStorage,
+  RemoveLocalItems,
+} from './localStorage.js';
 let weatherCol1 = document.getElementById('weatherCol1');
 let weatherCol2 = document.getElementById('weatherCol2');
 let weatherCol3 = document.getElementById('weatherCol3');
@@ -19,20 +23,21 @@ let day2 = document.getElementById('day2');
 let day3 = document.getElementById('day3');
 let day4 = document.getElementById('day4');
 let day5 = document.getElementById('day5');
-ForeCastURL();
-searchSubBtn.addEventListener('click', function(){
-    WeatherURL(searchBarI.value);
-    ForeCastURL(searchBarI.value);
-    
-    weatherCol1.removeChild(cityText)
-    weatherCol2.removeChild(currentWTxt);
-    weatherCol2.removeChild(timeTxt1);
-    weatherCol4.removeChild(degreeLgTxt);
-})
+searchSubBtn.addEventListener('click', function () {
+  WeatherURL(searchBarI.value);
+  ForeCastURL(searchBarI.value);
 
-searchBarI.addEventListener('keypress', function(event){
-    if(event.key == "Enter"){searchSubBtn.click();}
-})
+  weatherCol1.removeChild(cityText);
+  weatherCol2.removeChild(currentWTxt);
+  weatherCol2.removeChild(timeTxt1);
+  weatherCol4.removeChild(degreeLgTxt);
+});
+
+searchBarI.addEventListener('keypress', function (event) {
+  if (event.key == 'Enter') {
+    searchSubBtn.click();
+  }
+});
 
 // favorBtn.addEventListener('click', function(){
 //     let localStorageData = GettingLocalStorage();
@@ -40,52 +45,72 @@ searchBarI.addEventListener('keypress', function(event){
 //     FavoritedSavedItems();
 // })
 
+function WeatherColElements(weatherData) {
+  cityText = document.createElement('p');
+  cityText.textContent = weatherData.name;
+  cityText.className = 'pTxtStyles1';
+  currentWTxt = document.createElement('p');
+  currentWTxt.textContent = 'CurrentWeather';
+  currentWTxt.className = 'pTxtStyles1';
+  timeTxt1 = document.createElement('p');
+  timeTxt1.textContent = weatherData.time;
+  timeTxt1.className = 'pTxtStyles2';
+  degreeLgTxt = document.createElement('p');
+  degreeLgTxt.textContent = weatherData.main.temp + '°F';
+  degreeLgTxt.className = 'pTxtStyles3';
 
+  let weatherType = weatherData.weather[0].main;
+  let iconImgDiv = document.getElementById('iconImgDiv');
+  let iconImgSrc;
 
-function WeatherColElements(weatherData){
-   cityText = document.createElement('p');
-    cityText.textContent = weatherData.name;
-    cityText.className = "pTxtStyles1"
-     currentWTxt = document.createElement('p')
-    currentWTxt.textContent = "CurrentWeather";
-    currentWTxt.className = "pTxtStyles1";
-     timeTxt1 = document.createElement('p')
-    timeTxt1.textContent = weatherData.time;
-    timeTxt1.className = "pTxtStyles2";
-     degreeLgTxt = document.createElement('p')
-    degreeLgTxt.textContent = weatherData.main.temp + "°F";
-    degreeLgTxt.className = "pTxtStyles3";
+  if (weatherType == 'Clear') {
+    iconImgSrc = './assets/sun-thin.svg';
+  } else if (weatherType == 'Clouds') {
+    iconImgSrc = './assets/rainy-sharp.svg';
+  } else if (weatherType == 'Drizzle') {
+    iconImgSrc = './assets/sun-cloudy-fill.svg';
+  } else if (weatherType == 'Rain') {
+    iconImgSrc = './assets/sun-foggy-fill.svg';
+  } else if (weatherType == 'Thunderstorm') {
+    iconImgSrc = './assets/day-storm-showers.svg';
+  } else if (weatherType == 'Snow') {
+    iconImgSrc = './assets/cloud-snow-fill.svg';
+  } else if (weatherType == 'Mist') {
+    iconImgSrc = './assets/weather-mist.svg';
+  } else if (weatherType == 'Smoke') {
+    iconImgSrc = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc = './assets/cloud-hail.svg';
+  }
 
+  let iconImg = document.createElement('img');
+  iconImg.className
+  iconImg.src = iconImgSrc;
+  iconImgDiv.appendChild(iconImg);
 
-    weatherCol1.appendChild(cityText);
-    weatherCol2.appendChild(currentWTxt);
-    weatherCol2.appendChild(timeTxt1);
-    weatherCol4.appendChild(degreeLgTxt);
+  weatherCol1.appendChild(cityText);
+  weatherCol2.appendChild(currentWTxt);
+  weatherCol2.appendChild(timeTxt1);
+  weatherCol4.appendChild(degreeLgTxt);
 }
 
-function ForecastElements(forecastData){
-    day1.textContent = forecastData.list[0].main.temp + "°F";
-    day2.textContent = forecastData.list[2].main.temp + "°F";
-    day3.textContent = forecastData.list[3].main.temp + "°F";
-    day4.textContent = forecastData.list[4].main.temp + "°F";
-    day5.textContent = forecastData.list[5].main.temp + "°F";
+function ForecastElements(forecastData) {
+  day1.textContent = forecastData.list[0].main.temp + '°F';
+  day2.textContent = forecastData.list[2].main.temp + '°F';
+  day3.textContent = forecastData.list[3].main.temp + '°F';
+  day4.textContent = forecastData.list[4].main.temp + '°F';
+  day5.textContent = forecastData.list[5].main.temp + '°F';
 }
 
+// function FavoritedSavedItems(){
+//     let fav = GettingLocalStorage();
 
+//     fav.map((nameCity) => {
+//        let storageBtn = document.createElement('button')
+//         storageBtn.className = 'list-group-item list-group-item-action';
+//         storageBtn.textContent = 'placehoder'
+//     })
 
+// }
 
-function FavoritedSavedItems(){
-    let fav = GettingLocalStorage();
-
-    fav.map((nameCity) => {
-       let storageBtn = document.createElement('button')
-        storageBtn.className = 'list-group-item list-group-item-action';
-        storageBtn.textContent = 'placehoder'
-    })
-
-}
-
-
-
-
-export {WeatherColElements, ForecastElements}
+export { WeatherColElements, ForecastElements };
