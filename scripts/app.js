@@ -31,6 +31,7 @@ searchSubBtn.addEventListener('click', function () {
   weatherCol2.removeChild(currentWTxt);
   weatherCol2.removeChild(timeTxt1);
   weatherCol4.removeChild(degreeLgTxt);
+
 });
 
 searchBarI.addEventListener('keypress', function (event) {
@@ -84,7 +85,7 @@ function WeatherColElements(weatherData) {
   }
 
   let iconImg = document.createElement('img');
-  iconImg.className
+  iconImg.className = 'sunIcon';
   iconImg.src = iconImgSrc;
   iconImgDiv.appendChild(iconImg);
 
@@ -100,6 +101,155 @@ function ForecastElements(forecastData) {
   day3.textContent = forecastData.list[3].main.temp + '°F';
   day4.textContent = forecastData.list[4].main.temp + '°F';
   day5.textContent = forecastData.list[5].main.temp + '°F';
+
+
+  let forecastType = forecastData.list[0].weather[0].main;
+  let prpIcon1 = document.getElementById('prpIcon1');
+  let prpIcon2 = document.getElementById('prpIcon2');
+  let prpIcon3 = document.getElementById('prpIcon3');
+  let prpIcon4 = document.getElementById('prpIcon4');
+  let prpIcon5 = document.getElementById('prpIcon5');
+  let iconImgSrc2;
+  let iconImgSrc3;
+  let iconImgSrc4;
+  let iconImgSrc5;
+  let iconImgSrc6;
+
+  if (forecastType == 'Clear') {
+    iconImgSrc2 = './assets/sun-thin.svg';
+  } else if (forecastType == 'Clouds') {
+    iconImgSrc2 = './assets/rainy-sharp.svg';
+  } else if (forecastType == 'Drizzle') {
+    iconImgSrc2 = './assets/sun-cloudy-fill.svg';
+  } else if (forecastType == 'Rain') {
+    iconImgSrc2 = './assets/sun-foggy-fill.svg';
+  } else if (forecastType == 'Thunderstorm') {
+    iconImgSrc2 = './assets/day-storm-showers.svg';
+  } else if (forecastType == 'Snow') {
+    iconImgSrc2 = './assets/cloud-snow-fill.svg';
+  } else if (forecastType == 'Mist') {
+    iconImgSrc2 = './assets/weather-mist.svg';
+  } else if (forecastType == 'Smoke') {
+    iconImgSrc2 = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc2 = './assets/cloud-hail.svg';
+  }
+
+  let iconImg2 = document.createElement('img');
+  iconImg2.className = 'fiveIconClss';
+  iconImg2.src = iconImgSrc2;
+
+  console.log(iconImgSrc3);
+  if (forecastType == 'Clear') {
+    iconImgSrc3 = './assets/sun-thin.svg';
+  } else if (forecastType == 'Clouds') {
+    iconImgSrc3 = './assets/rainy-sharp.svg';
+  } else if (forecastType == 'Drizzle') {
+    iconImgSrc3 = './assets/sun-cloudy-fill.svg';
+  } else if (forecastType == 'Rain') {
+    iconImgSrc3 = './assets/sun-foggy-fill.svg';
+  } else if (forecastType == 'Thunderstorm') {
+    iconImgSrc3 = './assets/day-storm-showers.svg';
+  } else if (forecastType == 'Snow') {
+    iconImgSrc3 = './assets/cloud-snow-fill.svg';
+  } else if (forecastType == 'Mist') {
+    iconImgSrc3 = './assets/weather-mist.svg';
+  } else if (forecastType == 'Smoke') {
+    iconImgSrc3 = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc3 = './assets/cloud-hail.svg';
+  }
+
+  let iconImg3 = document.createElement('img');
+  iconImg3.className = 'fiveIconClss';
+  iconImg3.src = iconImgSrc3;
+
+
+  if (forecastType == 'Clear') {
+    iconImgSrc4 = './assets/sun-thin.svg';
+  } else if (forecastType == 'Clouds') {
+    iconImgSrc4 = './assets/rainy-sharp.svg';
+  } else if (forecastType == 'Drizzle') {
+    iconImgSrc4 = './assets/sun-cloudy-fill.svg';
+  } else if (forecastType == 'Rain') {
+    iconImgSrc4 = './assets/sun-foggy-fill.svg';
+  } else if (forecastType == 'Thunderstorm') {
+    iconImgSrc4 = './assets/day-storm-showers.svg';
+  } else if (forecastType == 'Snow') {
+    iconImgSrc4 = './assets/cloud-snow-fill.svg';
+  } else if (forecastType == 'Mist') {
+    iconImgSrc4 = './assets/weather-mist.svg';
+  } else if (forecastType == 'Smoke') {
+    iconImgSrc4 = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc4 = './assets/cloud-hail.svg';
+  }
+
+  let iconImg4 = document.createElement('img');
+  iconImg4.className = 'fiveIconClss';
+  iconImg4.src = iconImgSrc4;
+
+
+  if (forecastType == 'Clear') {
+    iconImgSrc5 = './assets/sun-thin.svg';
+  } else if (forecastType == 'Clouds') {
+    iconImgSrc5 = './assets/rainy-sharp.svg';
+  } else if (forecastType == 'Drizzle') {
+    iconImgSrc5 = './assets/sun-cloudy-fill.svg';
+  } else if (forecastType == 'Rain') {
+    iconImgSrc5 = './assets/sun-foggy-fill.svg';
+  } else if (forecastType == 'Thunderstorm') {
+    iconImgSrc5 = './assets/day-storm-showers.svg';
+  } else if (forecastType == 'Snow') {
+    iconImgSrc5 = './assets/cloud-snow-fill.svg';
+  } else if (forecastType == 'Mist') {
+    iconImgSrc5 = './assets/weather-mist.svg';
+  } else if (forecastType == 'Smoke') {
+    iconImgSrc5 = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc5 = './assets/cloud-hail.svg';
+  }
+
+  let iconImg5 = document.createElement('img');
+  iconImg5.className = 'fiveIconClss';
+  iconImg5.src = iconImgSrc5;
+
+
+  if (forecastType == 'Clear') {
+    iconImgSrc6 = './assets/sun-thin.svg';
+  } else if (forecastType == 'Clouds') {
+    iconImgSrc6 = './assets/rainy-sharp.svg';
+  } else if (forecastType == 'Drizzle') {
+    iconImgSrc6 = './assets/sun-cloudy-fill.svg';
+  } else if (forecastType == 'Rain') {
+    iconImgSrc6 = './assets/sun-foggy-fill.svg';
+  } else if (forecastType == 'Thunderstorm') {
+    iconImgSrc6 = './assets/day-storm-showers.svg';
+  } else if (forecastType == 'Snow') {
+    iconImgSrc6 = './assets/cloud-snow-fill.svg';
+  } else if (forecastType == 'Mist') {
+    iconImgSrc6 = './assets/weather-mist.svg';
+  } else if (forecastType == 'Smoke') {
+    iconImgSrc6 = './assets/tornado-warning.svg';
+  } else {
+    iconImgSrc6 = './assets/cloud-hail.svg';
+  }
+
+  let iconImg6 = document.createElement('img');
+  iconImg6.className = 'fiveIconClss';
+  iconImg6.src = iconImgSrc6;
+
+
+
+
+
+
+
+  prpIcon1.appendChild(iconImg2);
+  prpIcon2.appendChild(iconImg3);
+  prpIcon3.appendChild(iconImg4);
+  prpIcon4.appendChild(iconImg5);
+  prpIcon5.appendChild(iconImg6);
 }
 
 // function FavoritedSavedItems(){
